@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="28.673991999999622">
+<testsuite name="HomePage.spec.js" timestamp="2025-08-17T19:26:53.732Z" hostname="chromium" tests="1" failures="0" skipped="0" time="23.195" errors="0">
+<testcase name="Home Page › TC_22 : Validate  in episode card title, number, date and time are displayed" classname="HomePage.spec.js" time="23.195">
+<system-out>
+<![CDATA[Total episodes found: 3
+[object Promise]: Title - EP 20: The Power Of Communication, Number - Episode 20, Date - 11-AUG-25, Time - 32:16
+[object Promise]: Title - EP 19: Own Your Culture, Number - Episode 19, Date - 28-JUL-25, Time - 32:20
+[object Promise]: Title - EP 18: Building Unity Through Culture, Number - Episode 18, Date - 14-JUL-25, Time - 24:14
+
+[[ATTACHMENT|test-results\HomePage-Home-Page-TC-22-V-6a45d-date-and-time-are-displayed-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
