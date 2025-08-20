@@ -312,7 +312,7 @@ test.describe('Home Page', () => {
         }
     })
     test('TC_21 : Validate in PMUNPLUGEED section all episode cards are displayed', async ({ page }) => {
-         // 2 minutes for this test
+        // 2 minutes for this test
         const episodes = page.locator("[class='group cursor-pointer flex flex-col gap-2 w-[200px] md:w-[280px] flex-shrink-0']"); // update selector to actual card class
         // await expect(episodes).toBeVisible(); // at least 1 episode
         const count = await episodes.count();
@@ -374,7 +374,162 @@ test.describe('Home Page', () => {
         }
     })
 
-    
+
+    test('TC_25 : Validate Sponsored section "View All" button navigation', async ({ page }) => {
+        const SponsorViewAllButton = page.locator("[class='bg-black px-16 uppercase text-sm text-white py-3 rounded-[4px]']");
+        await expect(SponsorViewAllButton).toBeVisible();
+
+        await SponsorViewAllButton.click();
+        await page.waitForLoadState('domcontentloaded'); // wait until navigation completes
+
+        await page.getByRole('heading', { name: 'Business Outreach.' }).isVisible();
+    });
+    test('TC_26 : Validate "Brand Initiatives" heading, description text under "Brand Initiative and "View All" button is visible ', async ({ page }) => {
+        page.getByRole('heading', { name: 'Brand Initiatives' }).isVisible();
+        page.getByText('Learn insights, trends,').isVisible();
+        page.getByRole('link', { name: 'View All' }).isVisible();
+
+    })
+
+    test('TC_27 : Validate Sponsored section all article image is displayed', async ({ page }) => {
+        const sponsoredSection = page.locator("[class='max-w-7xl mx-auto w-full px-4 lg:px-8 xl:px-0']");
+        await expect(sponsoredSection).toBeVisible();
+        const images = sponsoredSection.locator("img");
+        const imgCount = await images.count();
+        console.log(`Total images found in sponsored section: ${imgCount}`);
+        for (let i = 0; i < imgCount; i++) {
+            const img = images.nth(i);
+            await expect(img).toBeVisible();
+        }
+    })
+
+    test('TC_28 : Validate Sponsored section all article navigation', async ({ page }) => {
+        test.setTimeout(120000); // 2 minutes for this test
+        const sponsoredSection = page.locator("[class='max-w-7xl mx-auto w-full px-4 lg:px-8 xl:px-0']");
+        await expect(sponsoredSection).toBeVisible();
+
+        const titles = sponsoredSection.locator("a h3");
+        const titleCount = await titles.count();
+        console.log(`Total articles found in sponsored section: ${titleCount}`);
+
+        for (let i = 0; i < titleCount; i++) {
+            const title = titles.nth(i);
+            const articleText = (await title.innerText()).trim();
+            console.log(`Checking article: ${articleText}`);
+
+            await title.click();
+            await page.waitForTimeout(3000);
+            const DetailPageTitle = await page.locator("[itemprop='headline']")
+            expect(DetailPageTitle).toContainText(articleText);
+            await page.waitForTimeout(3000);
+            await page.goBack();
+            await page.waitForTimeout(3000);
+        }
+    });
+
+    test('TC_29 : Validate Research section all article image is displayed', async ({ page }) => {
+        const sponsoredSection = page.locator("#RESEARCH");
+        await expect(sponsoredSection).toBeVisible();
+        const images = sponsoredSection.locator("img");
+        const imgCount = await images.count();
+        console.log(`Total images found in sponsored section: ${imgCount}`);
+        for (let i = 0; i < imgCount; i++) {
+            const img = images.nth(i);
+            await expect(img).toBeVisible();
+        }
+    })
+
+    test('TC_30 : Validate Research section all article navigation', async ({ page }) => {
+        test.setTimeout(120000); // 2 minutes for this test
+        const sponsoredSection = page.locator("#RESEARCH");
+        await expect(sponsoredSection).toBeVisible();
+
+        const titles = sponsoredSection.locator("a h3");
+        const titleCount = await titles.count();
+        console.log(`Total articles found in sponsored section: ${titleCount}`);
+
+        for (let i = 0; i < titleCount; i++) {
+            const title = titles.nth(i);
+            const articleText = (await title.innerText()).trim();
+            console.log(`Checking article: ${articleText}`);
+
+            await title.click();
+            await page.waitForTimeout(3000);
+            const DetailPageTitle = await page.locator("[itemprop='headline']")
+            expect(DetailPageTitle).toContainText(articleText);
+            await page.waitForTimeout(3000);
+            await page.goBack();
+            await page.waitForTimeout(3000);
+        }
+
+    });
+
+    test('TC_31 : VAlidate "Octopus handpicked" section title and logo is displayed', async ({ page }) => {
+        
+        const octopusSection = page.locator("[class='lg:w-[30%] w-full']").last();
+        await expect(octopusSection).toBeVisible();
+        const title = octopusSection.locator("[class='flex flex-col']");
+        const logo = octopusSection.getByAltText('Octopus with glasses');
+
+        await expect(title).toBeVisible();
+       const  titleText = await title.textContent();
+        console.log(`Octopus section title: ${titleText}`);
+        await expect(logo).toBeVisible();
+   
+    })
+
+    test('TC_32 : Validate "Octopus handpicked" section all product image is displayed', async ({ page }) => {
+        const octopusSection = page.locator("[class='lg:w-[30%] w-full']").last();
+        await expect(octopusSection).toBeVisible();
+        const images = octopusSection.locator("img");
+        const imgCount = await images.count();
+        console.log(`Total images found in octopus section: ${imgCount}`);
+        for (let i = 0; i < imgCount; i++) {
+            const img = images.nth(i);
+            await expect(img).toBeVisible();
+        }
+    })
+
+    test('TC_33 : Validate "Octopus handpicked" section all product navigation', async ({ page }) => {
+        test.setTimeout(120000); // 2 minutes for this test     
+        const octopusSection = page.locator("[class='lg:w-[30%] w-full']").last();
+        await expect(octopusSection).toBeVisible(); 
+        const titles = octopusSection.locator("a h3");
+        const titleCount = await titles.count();            
+        console.log(`Total articles found in octopus section: ${titleCount}`);
+        for (let i = 0; i < titleCount; i++) {
+            const title = titles.nth(i);
+            const articleText = (await title.innerText()).trim();
+            console.log(`Checking article: ${articleText}`);
+
+            await title.click();
+            await page.waitForTimeout(3000);
+            const DetailPageTitle = await page.locator("[class='font-medium text-3xl']")
+            expect(DetailPageTitle).toContainText(articleText);
+            await page.waitForTimeout(3000);
+            await page.goBack();
+            await page.waitForTimeout(3000);
+        }
+
+        
+    })
+
+    test.only('TC_34 : Validate "Back to Top" button navigates user to the top of the page', async ({ page }) => {   
+        test.setTimeout(120000);
+        const navigateToBottom = page.locator("[class='text-[10px] md:text-xs text-white/60']");
+        await navigateToBottom.scrollIntoViewIfNeeded({timeout: 3000});
+       // backToTopButton = page.locator("[class='fixed bottom-4 right-4 z-50 bg-gray-800 text-white p-2 rounded-full']");
+        page.locator("[class='lucide lucide-x w-4 h-4']").click();
+        await page.waitForTimeout(3000);
+       page.locator("[class='lucide lucide-arrow-up']").click();
+        await page.waitForTimeout(3000);
+        const scrollPosition = await page.evaluate(() => window.scrollY);
+        expect(scrollPosition).toBe(0); // Verify that the scroll position is at the top of the page
+        console.log(`Scroll position after clicking "Back to Top": ${scrollPosition}`);    
+    })
+
+
+
 
 })
 

@@ -79,6 +79,8 @@ class HomePage {
 
   }
 
+
+  
   async validateSocialMediaLinks() {
      
     // Find all anchor tags (links) within the social media block.

@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\Playwright Automation\\PeopleMattersAutomation\\playwright.config.js",
-    "rootDir": "D:/Playwright Automation/PeopleMattersAutomation/tests",
+    "configFile": "D:\\Playwright Automation\\peoplematters_website\\playwright.config.js",
+    "rootDir": "D:/Playwright Automation/peoplematters_website/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -46,15 +46,15 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/Playwright Automation/PeopleMattersAutomation/test-results",
+        "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {
           "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/Playwright Automation/PeopleMattersAutomation/tests",
+        "testDir": "D:/Playwright Automation/peoplematters_website/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -62,15 +62,15 @@
         "timeout": 30000
       },
       {
-        "outputDir": "D:/Playwright Automation/PeopleMattersAutomation/test-results",
+        "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {
           "actualWorkers": 1
         },
         "id": "firefox",
         "name": "firefox",
-        "testDir": "D:/Playwright Automation/PeopleMattersAutomation/tests",
+        "testDir": "D:/Playwright Automation/peoplematters_website/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -78,15 +78,15 @@
         "timeout": 30000
       },
       {
-        "outputDir": "D:/Playwright Automation/PeopleMattersAutomation/test-results",
+        "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {
           "actualWorkers": 1
         },
         "id": "webkit",
         "name": "webkit",
-        "testDir": "D:/Playwright Automation/PeopleMattersAutomation/tests",
+        "testDir": "D:/Playwright Automation/peoplematters_website/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -116,57 +116,42 @@
           "column": 6,
           "specs": [
             {
-              "title": "TC_22 : Validate  in episode card title, number, date and time are displayed",
+              "title": "TC_34 : Validate \"Back to Top\" button navigates user to the top of the page",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 39,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 23195,
+                      "duration": 40216,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Total episodes found: 3\n"
-                        },
-                        {
-                          "text": "[object Promise]: Title - EP 20: The Power Of Communication, Number - Episode 20, Date - 11-AUG-25, Time - 32:16\n"
-                        },
-                        {
-                          "text": "[object Promise]: Title - EP 19: Own Your Culture, Number - Episode 19, Date - 28-JUL-25, Time - 32:20\n"
-                        },
-                        {
-                          "text": "[object Promise]: Title - EP 18: Building Unity Through Culture, Number - Episode 18, Date - 14-JUL-25, Time - 24:14\n"
+                          "text": "Scroll position after clicking \"Back to Top\": 0\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-17T19:26:55.213Z",
+                      "startTime": "2025-08-19T08:34:30.808Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "D:\\Playwright Automation\\PeopleMattersAutomation\\test-results\\HomePage-Home-Page-TC-22-V-6a45d-date-and-time-are-displayed-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "85163291bc145e3cce73-779963be0e79328cfcba",
+              "id": "85163291bc145e3cce73-c0f05d9f2078fc18a7bf",
               "file": "HomePage.spec.js",
-              "line": 325,
-              "column": 5
+              "line": 517,
+              "column": 10
             }
           ]
         }
@@ -175,8 +160,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-17T19:26:51.951Z",
-    "duration": 28673.99199999962,
+    "startTime": "2025-08-19T08:34:28.296Z",
+    "duration": 45572.43,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
