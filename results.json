@@ -48,7 +48,7 @@
       {
         "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
@@ -64,7 +64,7 @@
       {
         "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
@@ -80,7 +80,7 @@
       {
         "outputDir": "D:/Playwright Automation/peoplematters_website/test-results",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
@@ -103,20 +103,20 @@
   },
   "suites": [
     {
-      "title": "HomePage.spec.js",
-      "file": "HomePage.spec.js",
+      "title": "Login.spec.js",
+      "file": "Login.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Home Page",
-          "file": "HomePage.spec.js",
-          "line": 4,
+          "title": "login Page",
+          "file": "Login.spec.js",
+          "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "TC_34 : Validate \"Back to Top\" button navigates user to the top of the page",
+              "title": "TC_02 : Validate logging into the website using valid credentials",
               "ok": true,
               "tags": [],
               "tests": [
@@ -124,34 +124,36 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 40216,
+                      "duration": 40902,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Scroll position after clicking \"Back to Top\": 0\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-19T08:34:30.808Z",
+                      "startTime": "2025-09-03T11:14:59.496Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Login-login-Page-TC-02-Val-7a84f-ite-using-valid-credentials-chromium\\trace.zip"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "85163291bc145e3cce73-c0f05d9f2078fc18a7bf",
-              "file": "HomePage.spec.js",
-              "line": 517,
-              "column": 10
+              "id": "a117b01ab0140ca0a337-b794499d20103d3e44f8",
+              "file": "Login.spec.js",
+              "line": 26,
+              "column": 5
             }
           ]
         }
@@ -160,8 +162,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-19T08:34:28.296Z",
-    "duration": 45572.43,
+    "startTime": "2025-09-03T11:14:56.596Z",
+    "duration": 46415.014999999985,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

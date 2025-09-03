@@ -1,8 +1,9 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="45.57243">
-<testsuite name="HomePage.spec.js" timestamp="2025-08-19T08:34:28.355Z" hostname="firefox" tests="1" failures="0" skipped="0" time="40.216" errors="0">
-<testcase name="Home Page › TC_34 : Validate &quot;Back to Top&quot; button navigates user to the top of the page" classname="HomePage.spec.js" time="40.216">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="46.41501499999998">
+<testsuite name="Login.spec.js" timestamp="2025-09-03T11:14:58.051Z" hostname="chromium" tests="1" failures="0" skipped="0" time="40.902" errors="0">
+<testcase name="login Page › TC_02 : Validate logging into the website using valid credentials" classname="Login.spec.js" time="40.902">
 <system-out>
-<![CDATA[Scroll position after clicking "Back to Top": 0
+<![CDATA[
+[[ATTACHMENT|test-results\Login-login-Page-TC-02-Val-7a84f-ite-using-valid-credentials-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>

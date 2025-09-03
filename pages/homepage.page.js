@@ -28,7 +28,8 @@ class HomePage {
   }
 
   async goto() {
-    await this.page.goto('https://www.peoplematters.in');
+   await this.page.goto('https://www.peoplematters.in');
+   // await this.page.goto('https://sea.peoplemattersglobal.com/');
   }
 
   async clickOnSkip() {
@@ -37,7 +38,7 @@ class HomePage {
     // Check if the button is visible and wait for it
     if (await proceedButton.isVisible()) {
       // If the button is visible, click it.
-      await proceedButton.click();
+      await proceedButton.click();  
     }
 
   }
