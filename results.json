@@ -103,46 +103,56 @@
   },
   "suites": [
     {
-      "title": "Login.spec.js",
-      "file": "Login.spec.js",
+      "title": "Research.spec.js",
+      "file": "Research.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "login Page",
-          "file": "Login.spec.js",
-          "line": 6,
+          "title": "Research article detail Page",
+          "file": "Research.spec.js",
+          "line": 65,
           "column": 6,
           "specs": [
             {
-              "title": "TC_02 : Validate logging into the website using valid credentials",
+              "title": "TC_10 : Validate social share icons open correct tabs",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
+                  "timeout": 100000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 17,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 40902,
+                      "duration": 44485,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "✅ Facebook share opened: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011\n"
+                        },
+                        {
+                          "text": "✅ LinkedIn share opened: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2FshareArticle%2F%3Furl%3Dhttps%253A%252F%252Fwww.peoplematters.in%252Farticle%252Ftalent-analytics%252Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011\n"
+                        },
+                        {
+                          "text": "✅ X share opened: https://x.com/intent/tweet?url=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011&text=Classified%20echoes%20of%201997%3A%20The%20click%20that%20launched%20Naukri.com\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-09-03T11:14:59.496Z",
+                      "startTime": "2025-09-08T12:31:44.430Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Login-login-Page-TC-02-Val-7a84f-ite-using-valid-credentials-chromium\\trace.zip"
+                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Research-Research-article--4b691-are-icons-open-correct-tabs-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -150,9 +160,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "a117b01ab0140ca0a337-b794499d20103d3e44f8",
-              "file": "Login.spec.js",
-              "line": 26,
+              "id": "a1dd0a8486f7e9c57d1d-155b70862015aebf9ca8",
+              "file": "Research.spec.js",
+              "line": 151,
               "column": 5
             }
           ]
@@ -162,8 +172,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-09-03T11:14:56.596Z",
-    "duration": 46415.014999999985,
+    "startTime": "2025-09-08T12:31:41.174Z",
+    "duration": 51375.25899999961,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

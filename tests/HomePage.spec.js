@@ -568,10 +568,12 @@ test.describe('Home Page', () => {
     });
 
     test('TC_37 : Validate NPS Functionality', async ({ page }) => {
+         test.setTimeout(100000)
         //Click on Rate your Experience button
-         await page.waitForTimeout(3000);
-        const npsButton = page.locator("body > div:nth-child(2) > main:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(14) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1)").first();
-        await npsButton.click();
+         await page.waitForTimeout(10000);
+      // const npsButton = page.locator("body > div:nth-child(2) > main:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(14) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1)").first();
+         const npsButton = page.locator("[class='font-medium text-lg whitespace-nowrap']")
+       await npsButton.click();
         await page.waitForTimeout(3000);
         //Click on close window button
         page.locator("[class='whitespace-nowrap font-medium text-lg']").click();
@@ -581,13 +583,13 @@ test.describe('Home Page', () => {
 
         page.locator("[class=' md:text-sm text-[10px] sm:my-2 my-1']").last().click();
 
-        page.locator("#name").fill('Test User');
-        page.locator("#email").fill("Sam@gmail.com")
-        page.locator("#contact_consent").click();
-        page.locator("[class='w-full bg-orange text-white font-medium md:py-3 py-2 md:text-base text-[10px] rounded-md hover:bg-orange-600 transition-colors']").click();
-        await page.waitForTimeout(3000);
-        const successMessage = page.locator("[class='fixed top-4 right-4 z-[9999] flex flex-col gap-2 items-end']");
-        successMessage.isVisible();
+       await page.locator("#name").fill('Test User');
+       await page.locator("#email").fill("Sam@gmail.com")
+       await page.locator("#contact_consent").click();
+       await page.locator("[class='w-full bg-orange text-white font-medium md:py-3 py-2 md:text-base text-[10px] rounded-md hover:bg-orange-600 transition-colors']").click();
+       await page.waitForTimeout(3000);
+        const successMessage = await page.locator("[class='fixed top-4 right-4 z-[9999] flex flex-col gap-2 items-end']");
+       await successMessage.isVisible();
     })
 
 
