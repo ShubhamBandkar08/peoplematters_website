@@ -103,59 +103,46 @@
   },
   "suites": [
     {
-      "title": "TalentAcquisition.spec.js",
-      "file": "TalentAcquisition.spec.js",
+      "title": "Technology.spec.js",
+      "file": "Technology.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Talent Acquisition Page",
-          "file": "TalentAcquisition.spec.js",
+          "title": "Technology Page",
+          "file": "Technology.spec.js",
           "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "TC_04 : Validate talent Acquisition page Sticky header subcategory navigation",
+              "title": "TC_01 : Validate technology Page Loads Successfully",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 200000,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 39,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 125342,
+                      "duration": 20791,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Total subcategories found: \u001b[33m3\u001b[39m\n"
-                        },
-                        {
-                          "text": "Subcategory 1: Appointments\n"
-                        },
-                        {
-                          "text": "Subcategory 2: Employee Value Proposition\n"
-                        },
-                        {
-                          "text": "Subcategory 3: Recruiting & Onboarding\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-09-12T05:58:58.475Z",
+                      "startTime": "2025-09-12T10:27:33.688Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\TalentAcquisition-Talent-A-62fab-ader-subcategory-navigation-chromium\\trace.zip"
+                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Technology-Technology-Page-35eb6-ogy-Page-Loads-Successfully-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -163,9 +150,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "cb77e83102b7f0ee097b-e06fb44e540e8bc1e3e3",
-              "file": "TalentAcquisition.spec.js",
-              "line": 76,
+              "id": "da3a142fb2b13f7c6edd-7680dc0cf0e4bb7ec5d2",
+              "file": "Technology.spec.js",
+              "line": 17,
               "column": 5
             }
           ]
@@ -175,8 +162,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-09-12T05:58:54.748Z",
-    "duration": 133582.27300000004,
+    "startTime": "2025-09-12T10:27:30.903Z",
+    "duration": 25324.30199999921,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

@@ -1,13 +1,9 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="133.58227300000004">
-<testsuite name="TalentAcquisition.spec.js" timestamp="2025-09-12T05:58:56.766Z" hostname="chromium" tests="1" failures="0" skipped="0" time="125.342" errors="0">
-<testcase name="Talent Acquisition Page › TC_04 : Validate talent Acquisition page Sticky header subcategory navigation" classname="TalentAcquisition.spec.js" time="125.342">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="25.32430199999921">
+<testsuite name="Technology.spec.js" timestamp="2025-09-12T10:27:32.339Z" hostname="chromium" tests="1" failures="0" skipped="0" time="20.791" errors="0">
+<testcase name="Technology Page › TC_01 : Validate technology Page Loads Successfully" classname="Technology.spec.js" time="20.791">
 <system-out>
-<![CDATA[Total subcategories found: [33m3[39m
-Subcategory 1: Appointments
-Subcategory 2: Employee Value Proposition
-Subcategory 3: Recruiting & Onboarding
-
-[[ATTACHMENT|test-results\TalentAcquisition-Talent-A-62fab-ader-subcategory-navigation-chromium\trace.zip]]
+<![CDATA[
+[[ATTACHMENT|test-results\Technology-Technology-Page-35eb6-ogy-Page-Loads-Successfully-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>
