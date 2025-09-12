@@ -78,50 +78,57 @@ test.describe('Podcast Page', {}, () => {
 
   })
 
-
-test('TC_05: Validate each GO TO EPISODE button navigation from each card For All Seasons', async ({ page }) => {
-  test.setTimeout(3000000);
-  const podcastPage = new PodcastPage(page);
-  await podcastPage.podcastLink.click();
-  await page.waitForTimeout(4000);
-
-  const episodeCards = page.locator("[class='border border-inactiveGray rounded-lg py-[23px] px-3 flex flex-col h-full transition-shadow hover:shadow-lg']");
-  const cardCount = await episodeCards.count();
-
-  for (let i = 0; i < cardCount; i++) {
-    const card = episodeCards.nth(i);
-    await card.scrollIntoViewIfNeeded();
-
-    
-    const EpisodeTitle = (await card.locator("h3").innerText()).trim();
-
-    await page.waitForTimeout(2000);
-
-    const GoToEpisode = card.locator("[class='text-gray-900 font-medium text-[10px] md:text-xs hover:text-orange-500 transition-colors']");
-    await GoToEpisode.click();
-    await page.waitForTimeout(2000);
-    const EpisodePageTitle = (await page.locator("[class='text-4xl md:text-5xl font-medium text-gray-900 mb-6']").innerText()).trim();
-    await page.waitForTimeout(2000);
-    
-    await expect(EpisodePageTitle).toBe(EpisodeTitle);
-
+  test('TC_05: Validate each GO TO EPISODE button navigation from each card For All Seasons', async ({ page }) => {
+    test.setTimeout(3000000);
+    const podcastPage = new PodcastPage(page);
+    await podcastPage.podcastLink.click();
     await page.waitForTimeout(4000);
-    await page.goBack();
+
+    const episodeCards = page.locator("[class='border border-inactiveGray rounded-lg py-[23px] px-3 flex flex-col h-full transition-shadow hover:shadow-lg']");
+    const cardCount = await episodeCards.count();
+
+    for (let i = 0; i < cardCount; i++) {
+      const card = episodeCards.nth(i);
+      await card.scrollIntoViewIfNeeded();
+
+
+      const EpisodeTitle = (await card.locator("h3").innerText()).trim();
+
+      await page.waitForTimeout(2000);
+
+      const GoToEpisode = card.locator("[class='text-gray-900 font-medium text-[10px] md:text-xs hover:text-orange-500 transition-colors']");
+      await GoToEpisode.click();
+      await page.waitForTimeout(2000);
+      const EpisodePageTitle = (await page.locator("[class='text-4xl md:text-5xl font-medium text-gray-900 mb-6']").innerText()).trim();
+      await page.waitForTimeout(2000);
+
+      await expect(EpisodePageTitle).toBe(EpisodeTitle);
+
+      await page.waitForTimeout(4000);
+      await page.goBack();
+      await page.waitForTimeout(4000);
+    }
+  });
+
+  //Pending
+  test("TC_06: Validate podcast details page 'More Episode' section navigation", async ({ page }) => {
+    test.setTimeout(3000000);
+    const podcastPage = new PodcastPage(page);
+    await podcastPage.podcastLink.click();
     await page.waitForTimeout(4000);
-  }
-});
 
-test("TC_06: Validate podcast details page 'More Episode' section navigation",async({page})=>{ 
-  test.setTimeout(3000000);
-  const podcastPage = new PodcastPage(page);
-  await podcastPage.podcastLink.click();
-  await page.waitForTimeout(4000);
+    const fistEpisodeCard = page.locator("[class='border border-inactiveGray rounded-lg py-[23px] px-3 flex flex-col h-full transition-shadow hover:shadow-lg']").first();
+    await fistEpisodeCard.locator("[class='text-gray-900 font-medium text-[10px] md:text-xs hover:text-orange-500 transition-colors']").click();
+    await page.waitForTimeout(4000);
 
-  const fistEpisodeCard = page.locator("[class='border border-inactiveGray rounded-lg py-[23px] px-3 flex flex-col h-full transition-shadow hover:shadow-lg']").first();
-  fistEpisodeCard.locator("[class='text-gray-900 font-medium text-[10px] md:text-xs hover:text-orange-500 transition-colors']").click();
-  await page.waitForTimeout(4000);
 
-    
-})
 
+
+
+
+  })
+
+
+
+  
 });

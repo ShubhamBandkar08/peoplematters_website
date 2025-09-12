@@ -103,56 +103,59 @@
   },
   "suites": [
     {
-      "title": "Research.spec.js",
-      "file": "Research.spec.js",
+      "title": "TalentAcquisition.spec.js",
+      "file": "TalentAcquisition.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Research article detail Page",
-          "file": "Research.spec.js",
-          "line": 65,
+          "title": "Talent Acquisition Page",
+          "file": "TalentAcquisition.spec.js",
+          "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "TC_10 : Validate social share icons open correct tabs",
+              "title": "TC_04 : Validate talent Acquisition page Sticky header subcategory navigation",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 100000,
+                  "timeout": 200000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 17,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 44485,
+                      "duration": 125342,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "✅ Facebook share opened: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011\n"
+                          "text": "Total subcategories found: \u001b[33m3\u001b[39m\n"
                         },
                         {
-                          "text": "✅ LinkedIn share opened: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2FshareArticle%2F%3Furl%3Dhttps%253A%252F%252Fwww.peoplematters.in%252Farticle%252Ftalent-analytics%252Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011\n"
+                          "text": "Subcategory 1: Appointments\n"
                         },
                         {
-                          "text": "✅ X share opened: https://x.com/intent/tweet?url=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011&text=Classified%20echoes%20of%201997%3A%20The%20click%20that%20launched%20Naukri.com\n"
+                          "text": "Subcategory 2: Employee Value Proposition\n"
+                        },
+                        {
+                          "text": "Subcategory 3: Recruiting & Onboarding\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-09-08T12:31:44.430Z",
+                      "startTime": "2025-09-12T05:58:58.475Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Research-Research-article--4b691-are-icons-open-correct-tabs-chromium\\trace.zip"
+                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\TalentAcquisition-Talent-A-62fab-ader-subcategory-navigation-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -160,9 +163,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "a1dd0a8486f7e9c57d1d-155b70862015aebf9ca8",
-              "file": "Research.spec.js",
-              "line": 151,
+              "id": "cb77e83102b7f0ee097b-e06fb44e540e8bc1e3e3",
+              "file": "TalentAcquisition.spec.js",
+              "line": 76,
               "column": 5
             }
           ]
@@ -172,8 +175,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-09-08T12:31:41.174Z",
-    "duration": 51375.25899999961,
+    "startTime": "2025-09-12T05:58:54.748Z",
+    "duration": 133582.27300000004,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

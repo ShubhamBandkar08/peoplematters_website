@@ -47,20 +47,23 @@ test.describe('Research Page', () => {
         for (let i = 0; i < peoplemattersSectionArticles; i++) {
             const article = peoplemattersSection.locator("h3").nth(i);
             const articleTitle = (await article.innerText()).trim();
-            console.log(`Navigating to article: ${articleTitle}`);
+            // console.log(`Navigating to article: ${articleTitle}`);
             await article.click();
-            await page.waitForTimeout(4000);
+            await expect(page.locator("h1")).toHaveText(articleTitle, { timeout: 15000 });
 
             const reseachDetailPageTitle = (await (await page.locator("h1")).innerText()).trim();
             await expect(reseachDetailPageTitle).toBe(articleTitle);
 
             await page.goBack();
-            await page.waitForTimeout(4000);
+            await page.waitForTimeout(5000);
         }
 
     })
 
 });
+
+
+// Research Article Detail Page Test Cases
 
 test.describe('Research article detail Page', () => {
     test.use({
@@ -173,11 +176,57 @@ test.describe('Research article detail Page', () => {
         }
     });
 
-   
+    // test('TC_11: Validate that on opening an article, the Related section shows articles from the same category ', async ({ page }) => {
+    //     test.setTimeout(100000);
+    //     const research = new ResearchPage(page);
+    //     await research.researchlink.click();
+    //     await page.waitForTimeout(6000);
+    //     page.locator("[class='relative w-full mb-4 overflow-hidden rounded aspect-video']").first().click();
+    //     await page.waitForTimeout(6000);
+
+    //     const titleSec = page.locator("[class='w-full flex-col gap-1']")
+    //     const TitleCate = await titleSec.locator("h3").innerText();
+    //     console.log(`Article Title: ${TitleCate}`);
+
+    // })
+
+    test("TC_13 : Validate Topics Section tags Navigation", async ({ page }) => {
+        test.setTimeout(160000);
+        const research = new ResearchPage(page);
+        await research.researchlink.click();
+        await page.waitForTimeout(6000);
+        page.locator("[class='relative w-full mb-4 overflow-hidden rounded aspect-video']").first().click();
+        await page.waitForTimeout(6000);
+
+        const topicsSection = page.locator("[class='flex items-center gap-5 flex-wrap mb-12']")
+        const topicTags = topicsSection.locator("a");
+        const tagCount = await topicTags.count();
+        console.log(`Total topic tags found: ${tagCount}`);
+        for (let i = 0; i < tagCount; i++) {
+            const tag = topicTags.nth(i);
+            const tagText = (await tag.innerText()).trim();
+
+            console.log(`Navigating to topic tag: ${tagText}`);
+            await tag.click();
+            await page.waitForTimeout(6000);
+
+            const tagPageTitle = page.locator("[class='text-5xl md:text-7xl font-medium capitalize mb-8 md:mb-16']");
+            const actualTitle = (await tagPageTitle.innerText()).trim();
+
+            // Clean both texts (remove leading # and trailing .)
+            const cleanedTagText = tagText.replace(/^#/, "").replace(/\.$/, "").trim();
+            const cleanedTitle = actualTitle.replace(/^#/, "").replace(/\.$/, "").trim();
+
+            console.log(`Comparing Tag: "${cleanedTagText}" with Title: "${cleanedTitle}"`);
+
+            // Assert after cleaning
+            await expect(tagPageTitle).toContainText(cleanedTagText, { timeout: 15000 });
+            await page.waitForTimeout(5000);
+            await page.goBack();
+            await page.waitForTimeout(5000);
+        }
 
 
+    })
 
-
-
-
-})   
+})

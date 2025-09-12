@@ -189,17 +189,38 @@ test.describe('Home Page', () => {
         await expect(footer).toBeVisible();
     });
 
-    test('TC_15 : Validate social media and our product footer links are working', async ({ page }) => {
+    test('TC_15 : Validate social media footer links are working', async ({ page }) => {
         // Use a class that represents the Home Page interactions
-        test.setTimeout(120000);
+        test.setTimeout(150000);
         const hp = new HomePage(page);
-       const SocialMediaIcons =  page.getByAltText('Facebook')
-       expect(SocialMediaIcons).toBeVisible();
-       
+
+        const SocialMediaIcons = page.getByRole('link', { name: 'Facebook' })
+        await expect(SocialMediaIcons).toBeVisible();
+
         await hp.validateSocialMediaLinks();
     });
 
-    test('TC_16 : Validate footer links are working', async ({ page, context }) => {
+    // test('TC_16 : Validate Our Product links open correctly in new tab', async ({ page }) => {
+    //     test.setTimeout(150000);
+
+    //     // Initialize Home Page object if you’re using POM (optional)
+    //     const hp = new HomePage(page);
+
+    //     // Validate social media icon is visible (sanity check)
+    //     const socialMediaIcon = page.getByRole('link', { name: 'Facebook' });
+    //     await expect(socialMediaIcon).toBeVisible();
+
+    //     // Locate the "Our Product" block
+    //     const ourProBlock = page.locator("[class='flex flex-wrap gap-8']");
+    //     const ourProducts = await ourProBlock.locator("a");
+    //     console.log(`Total products found: ${ourProducts.length}`);
+    //     const proCount = await ourProducts.count();
+       
+    // });
+
+
+
+    test('TC_16 : Validate footer menu links are working', async ({ page, context }) => {
         test.setTimeout(120000);
 
         const footerLinks = page.locator("[class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-8']");
@@ -308,7 +329,7 @@ test.describe('Home Page', () => {
 
         }
     })
-    
+
     test('TC_21 : Validate in PMUNPLUGEED section all episode cards are displayed', async ({ page }) => {
         // 2 minutes for this test
         const episodes = page.locator("[class='group cursor-pointer flex flex-col gap-2 w-[200px] md:w-[280px] flex-shrink-0']"); // update selector to actual card class
@@ -500,7 +521,7 @@ test.describe('Home Page', () => {
             console.log(`Checking article: ${articleText}`);
 
             await title.click();
-            await page.waitForTimeout(3000);
+            await page.waitForTimeout(6000);
             const DetailPageTitle = await page.locator("[class='font-medium text-3xl']")
             expect(DetailPageTitle).toContainText(articleText);
             await page.waitForTimeout(3000);
@@ -515,7 +536,7 @@ test.describe('Home Page', () => {
         const navigateToBottom = page.locator("[class='text-[10px] md:text-xs text-white/60']");
         await navigateToBottom.scrollIntoViewIfNeeded({ timeout: 3000 });
         // backToTopButton = page.locator("[class='fixed bottom-4 right-4 z-50 bg-gray-800 text-white p-2 rounded-full']");
-       await page.getByRole('button', { name: 'Close cookie consent' }).click();
+        await page.getByRole('button', { name: 'Close cookie consent' }).click();
         await page.waitForTimeout(3000);
         page.locator("[class='lucide lucide-arrow-up']").click();
         await page.waitForTimeout(3000);
@@ -568,12 +589,12 @@ test.describe('Home Page', () => {
     });
 
     test('TC_37 : Validate NPS Functionality', async ({ page }) => {
-         test.setTimeout(100000)
+        test.setTimeout(100000)
         //Click on Rate your Experience button
-         await page.waitForTimeout(10000);
-      // const npsButton = page.locator("body > div:nth-child(2) > main:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(14) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1)").first();
-         const npsButton = page.locator("[class='font-medium text-lg whitespace-nowrap']")
-       await npsButton.click();
+        await page.waitForTimeout(10000);
+        // const npsButton = page.locator("body > div:nth-child(2) > main:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(14) > div:nth-child(1) > button:nth-child(2) > span:nth-child(1)").first();
+        const npsButton = page.locator("[class='font-medium text-lg whitespace-nowrap']")
+        await npsButton.click();
         await page.waitForTimeout(3000);
         //Click on close window button
         page.locator("[class='whitespace-nowrap font-medium text-lg']").click();
@@ -583,15 +604,13 @@ test.describe('Home Page', () => {
 
         page.locator("[class=' md:text-sm text-[10px] sm:my-2 my-1']").last().click();
 
-       await page.locator("#name").fill('Test User');
-       await page.locator("#email").fill("Sam@gmail.com")
-       await page.locator("#contact_consent").click();
-       await page.locator("[class='w-full bg-orange text-white font-medium md:py-3 py-2 md:text-base text-[10px] rounded-md hover:bg-orange-600 transition-colors']").click();
-       await page.waitForTimeout(3000);
+        await page.locator("#name").fill('Test User');
+        await page.locator("#email").fill("Sam@gmail.com")
+        await page.locator("#contact_consent").click();
+        await page.locator("[class='w-full bg-orange text-white font-medium md:py-3 py-2 md:text-base text-[10px] rounded-md hover:bg-orange-600 transition-colors']").click();
+        await page.waitForTimeout(3000);
         const successMessage = await page.locator("[class='fixed top-4 right-4 z-[9999] flex flex-col gap-2 items-end']");
-       await successMessage.isVisible();
+        await successMessage.isVisible();
     })
-
-
-
+    
 })

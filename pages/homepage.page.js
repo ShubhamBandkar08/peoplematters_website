@@ -20,25 +20,27 @@ class HomePage {
     this.logo = page.getByAltText('People Matters Logo');
     this.hotTopicsSection = page.locator('.lg\\:w-\\[30\\%\\]').first();
     this.hotTopicLinks = this.hotTopicsSection.locator("[class='text-base font-medium text-inkBlack flex-1 line-clamp-2']");
-    this.detailPageTitle = page.locator("[class='text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold capitalize']");
-   // this.socialMediaBlock = page.locator("[class='mb-10 flex justify-center space-x-6 lg:flex-row flex-wrap']");
-     this.socialMediaBlock = page.locator('footer');
+    this.detailPageTitle = page.locator("h1");
+    // this.socialMediaBlock = page.locator("[class='mb-10 flex justify-center space-x-6 lg:flex-row flex-wrap']");
+    // this.socialMediaBlock = page.locator('footer');
+    this.socialMediaBlock = page.locator("[class='mb-10 flex justify-center space-x-6 lg:flex-row flex-wrap']");
+    this.outProductBlock = page.locator("[class='flex flex-wrap gap-8']");
 
-  
   }
 
   async goto() {
-   await this.page.goto('https://www.peoplematters.in');
-   // await this.page.goto('https://sea.peoplemattersglobal.com/');
+    await this.page.goto('https://www.peoplematters.in');
+    // await this.page.goto('https://sea.peoplemattersglobal.com/');
   }
 
   async clickOnSkip() {
-    const proceedButton = this.page.getByRole('button', { name: 'Skip' })
+  // const proceedButton = this.page.getByRole('button', { name: 'Skip' }).first();
+   const proceedButton = this.page.locator("[class='text-sm text-white flex items-center gap-1 absolute top-4 right-4']");
 
     // Check if the button is visible and wait for it
     if (await proceedButton.isVisible()) {
       // If the button is visible, click it.
-      await proceedButton.click();  
+      await proceedButton.click();
     }
 
   }
@@ -81,9 +83,9 @@ class HomePage {
   }
 
 
-  
+
   async validateSocialMediaLinks() {
-     
+
     // Find all anchor tags (links) within the social media block.
     const links = await this.socialMediaBlock.locator('a').all();
 
@@ -107,7 +109,7 @@ class HomePage {
           // Assert that the URL of the new page does not contain common error indicators.
           expect.soft(newPage.url(), `Navigation failed for link: ${href}`).not.toContain('error');
           expect.soft(newPage.url(), `Navigation failed for link: ${href}`).not.toContain('404');
-          
+
           // Log a success message.
           console.log(`Successfully navigated to: ${newPage.url()}`);
 
@@ -123,8 +125,26 @@ class HomePage {
   }
 
 
+  async validateOurProductLinks() {
+
+    const links = await this.outProductBlock.locator("[class='block']").all();
+
+    // Loop through each link found.
+    for (const link of links) {
+      // Get the href attribute to check the URL.
+
+      const [newPage] = await Promise.all([
+        this.page.waitForEvent('popup'),
+        link.click()
+      ]);
+      await newPage.close();
 
 
+
+    }
+
+
+  }
 }
 
 

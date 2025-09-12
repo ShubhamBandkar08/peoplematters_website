@@ -1,12 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="51.375258999999616">
-<testsuite name="Research.spec.js" timestamp="2025-09-08T12:31:42.625Z" hostname="chromium" tests="1" failures="0" skipped="0" time="44.485" errors="0">
-<testcase name="Research article detail Page › TC_10 : Validate social share icons open correct tabs" classname="Research.spec.js" time="44.485">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="133.58227300000004">
+<testsuite name="TalentAcquisition.spec.js" timestamp="2025-09-12T05:58:56.766Z" hostname="chromium" tests="1" failures="0" skipped="0" time="125.342" errors="0">
+<testcase name="Talent Acquisition Page › TC_04 : Validate talent Acquisition page Sticky header subcategory navigation" classname="TalentAcquisition.spec.js" time="125.342">
 <system-out>
-<![CDATA[✅ Facebook share opened: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011
-✅ LinkedIn share opened: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2FshareArticle%2F%3Furl%3Dhttps%253A%252F%252Fwww.peoplematters.in%252Farticle%252Ftalent-analytics%252Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011
-✅ X share opened: https://x.com/intent/tweet?url=https%3A%2F%2Fwww.peoplematters.in%2Farticle%2Ftalent-analytics%2Fclassified-echoes-of-1997-the-click-that-launched-naukricom-43011&text=Classified%20echoes%20of%201997%3A%20The%20click%20that%20launched%20Naukri.com
+<![CDATA[Total subcategories found: [33m3[39m
+Subcategory 1: Appointments
+Subcategory 2: Employee Value Proposition
+Subcategory 3: Recruiting & Onboarding
 
-[[ATTACHMENT|test-results\Research-Research-article--4b691-are-icons-open-correct-tabs-chromium\trace.zip]]
+[[ATTACHMENT|test-results\TalentAcquisition-Talent-A-62fab-ader-subcategory-navigation-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>
