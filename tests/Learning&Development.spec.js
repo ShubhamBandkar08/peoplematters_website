@@ -1,30 +1,26 @@
 const { test, expect } = require('@playwright/test');
 const { HomePage } = require('../pages/homepage.page');
 const { StrategyPage } = require('../pages/strategy.page');
-const { RewardsAndPerformancePage } = require('../pages/rewards&performance.page');
-test.describe('Rewards and Performce Page', () => {
-    test.use({
-        viewport: { width: 1280, height: 720 },
-    });
+const { LearningAndDevelopmentPage } = require('../pages/learninganddevelopmentPage.page');
+
+test.describe('Learning & Development Page', () => {
+    test.use({ viewport: { width: 1280, height: 720 } });
 
     test.beforeEach(async ({ page }) => {
         const hp = new HomePage(page);
         await hp.goto();
-        await page.waitForTimeout(6000);
         await hp.clickOnSkip();
-        await page.waitForTimeout(6000);
     });
 
-    test('TC_01 : Validate Strategy Page Loads Successfully', async ({ page }) => {
-        const rewardsAndPerformanceObj = new RewardsAndPerformancePage(page);
-        await rewardsAndPerformanceObj.rewardsAndPerformanceLink.click();
+    test('TC_01 : Validate L&D Page Loads Successfully', async ({ page }) => {
+        const lnd = new LearningAndDevelopmentPage(page);
+        await lnd.learningAndDevelopmentLink.click();
+        await expect(page).toHaveURL(/learning-and-development/);
+    });
 
-        await expect(page).toHaveURL(/rewards-and-performance/, { timeout: 15000 });
-    })
-
-    test('TC_02 : Validate Rewards and Performce Page Section Labels', async ({ page }) => {
-        const rewardsAndPerformanceObj = new RewardsAndPerformancePage(page);
-        await rewardsAndPerformanceObj.rewardsAndPerformanceLink.click();
+    test('TC_02 : Validate L&D Page Section Labels', async ({ page }) => {
+        const lnd = new LearningAndDevelopmentPage(page);
+        await lnd.learningAndDevelopmentLink.click();
         await page.waitForTimeout(6000);
 
         // Correct locator
@@ -42,20 +38,37 @@ test.describe('Rewards and Performce Page', () => {
         }
     });
 
-    test('TC_03 : Validate Rewards and Performce page sub-category navigation', async ({ page }) => {
+    test('TC_03 : Validate L&D Sub-category Navigation', async ({ page }) => {
         test.setTimeout(160000);
-        const rewardsAndPerformanceObj = new RewardsAndPerformancePage(page);
-        await rewardsAndPerformanceObj.rewardsAndPerformanceLink.click();
+        const lnd = new LearningAndDevelopmentPage(page);
+        await lnd.learningAndDevelopmentLink.click();
         await page.waitForTimeout(6000);
+
+        // const subCatDiv = page.locator("div.flex.flex-wrap.gap-y-4");
+        // const subcategories = subCatDiv.locator('a');
+        // const count = await subcategories.count();
+
+        // for (let i = 0; i < count; i++) {
+        //   const subCat = subcategories.nth(i);
+        //   const text = (await subCat.textContent()).replace(/\n/g, '').trim();
+
+        //   console.log(`Subcategory ${i + 1}:`, text);
+        //   await subCat.click();
+
+        //   const pageTitle = page.locator("h1, [class*='text-[32px]']");
+        //   await expect(pageTitle).toContainText(text);
+
+        //   await page.goBack();
+        // }
         const stategyobj = new StrategyPage(page);
         await stategyobj.validateSubcategories();
 
-    })
+    });
 
-    test('TC_04 : Validate Rewards and Performce page Sticky header subcategory navigation', async ({ page }) => {
+    test('TC_04 : Validate L&D page Sticky header subcategory navigation', async ({ page }) => {
         test.setTimeout(200000);
-        const rewardsAndPerformanceObj = new RewardsAndPerformancePage(page);
-        await rewardsAndPerformanceObj.rewardsAndPerformanceLink.click();
+        const lnd = new LearningAndDevelopmentPage(page);
+        await lnd.learningAndDevelopmentLink.click();
         await page.waitForTimeout(6000);
         //scolldown
         await page.mouse.wheel(0, 600);
@@ -89,10 +102,10 @@ test.describe('Rewards and Performce Page', () => {
 
     })
 
-    test('TC_05 : Verify Rewards and Performce Page Articles navigation and load successfully', async ({ page }) => {
+    test('TC_05 : Validate L&D Page Articles navigation and load successfully', async ({ page }) => {
         test.setTimeout(40000000);
-        const rewardsAndPerformanceObj = new RewardsAndPerformancePage(page);
-        await rewardsAndPerformanceObj.rewardsAndPerformanceLink.click();
+        const lnd = new LearningAndDevelopmentPage(page);
+        await lnd.learningAndDevelopmentLink.click();
         await page.waitForTimeout(6000);
         const articleSection = page.locator("[class='flex flex-col gap-y-10 lg:gap-y-16 relative w-full']");
         const articles = articleSection.locator("h3");
@@ -102,7 +115,7 @@ test.describe('Rewards and Performce Page', () => {
             const article = articles.nth(i);
             const articleText = await article.textContent();
             await article.click()
-            await page.waitForTimeout(1500);
+            await page.waitForTimeout(10000);
             const articlePageTitle = await page.locator("h1").textContent();
             await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 15000 });
             await page.waitForTimeout(5000);
@@ -111,8 +124,4 @@ test.describe('Rewards and Performce Page', () => {
         }
     })
 
-
-
-
-
-})
+});

@@ -12,27 +12,27 @@ test.describe('Home Page', () => {
         await page.waitForTimeout(6000);
     })
 
-    test('TC-01 : Verify page title', async ({ page }) => {
+    test('TC-01 : Verify the page title is displayed', async ({ page }) => {
         const pageTitle = await page.title();
         console.log(`'Page title:',${pageTitle}`)
         expect(pageTitle).not.toBe('')
     });
 
-    test('TC-02 : Verify homepage loads successfully', async ({ page, request }) => {
+    test('TC-02 : Verify the homepage loads successfully', async ({ page, request }) => {
         test.setTimeout(120000);
         const url = await page.url();
         const response = await request.get(url);
         expect.soft(response.status()).toBe(200);
     });
 
-    test('TC-03 : Verify website logo display', async ({ page }) => {
+    test('TC-03 : Verify the website logo is displayed', async ({ page }) => {
         test.setTimeout(120000);
 
         const logo = page.locator("img[class='w-[218px] lg:w-auto']");
         await expect(logo).toBeVisible();
     });
 
-    test('TC-04 : Verify login/signup page navigation', async ({ page }) => {
+    test('TC-04 : Verify navigation to the Login/Signup page', async ({ page }) => {
         test.setTimeout(120000); // 2 minutes for this test
         await page.getByRole('link', { name: 'Login / Signup' }).first().click()
         await page.waitForTimeout(3000);
@@ -40,7 +40,7 @@ test.describe('Home Page', () => {
         await expect(page).toHaveURL(/auth\/login/);
     })
 
-    test('TC-05 : Verify search functionality', async ({ page }) => {
+    test('TC-05 : Verify search functionality works correctly', async ({ page }) => {
         test.setTimeout(120000);
         const searchInput = page.getByRole('img', { name: 'Search' }).first()
         await searchInput.click();
@@ -57,7 +57,7 @@ test.describe('Home Page', () => {
 
     });
 
-    test('TC-06 : Verify search functionality in sticky header', async ({ page }) => {
+    test('TC-06 : Verify search functionality in the sticky header works correctly', async ({ page }) => {
         test.setTimeout(120000);
         await page.getByRole('heading', { name: 'CURRENT' }).first().scrollIntoViewIfNeeded();
         const searchInput = page.locator("[class='cursor-pointer text-gray-700']")
@@ -101,7 +101,7 @@ test.describe('Home Page', () => {
         await expect(featureNews).toBeVisible();
     })
 
-    test('TC_10: Validate in feature news section images are visible', async ({ page }) => {
+    test('TC_10: Verify images in the Featured News section are visible', async ({ page }) => {
         test.setTimeout(120000);
         const featureNews = page.locator("[class='grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-4 h-full']");
         await expect(featureNews).toBeVisible();
@@ -116,7 +116,7 @@ test.describe('Home Page', () => {
 
     })
 
-    test('TC_11 : validate feature news article navigation', async ({ page }) => {
+    test('TC_11 : Verify article navigation in the Featured News section', async ({ page }) => {
         test.setTimeout(120000); // 2 minutes for this test
         const featureNews = page.locator("[class='grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-4 h-full']");
         await expect(featureNews).toBeVisible();
@@ -177,13 +177,13 @@ test.describe('Home Page', () => {
     // });
 
 
-    test('TC_13 : validate Hot topic Navigation', async ({ page }) => {
+    test('TC_13 : Verify Hot Topics navigation works correctly', async ({ page }) => {
         test.setTimeout(120000); // 2 minutes for this test
         const hp = new HomePage(page);
         await hp.validateHotTopicNavigation();
     })
 
-    test('TC_14 : Footer is visible', async ({ page }) => {
+    test('TC_14 : Verify the footer is visible', async ({ page }) => {
         test.setTimeout(120000); // 2 minutes for this test
         const footer = page.locator('footer'); // update selector if needed
         await expect(footer).toBeVisible();

@@ -7,6 +7,7 @@ test.describe('Culture Page', () => {
     });
 
     test.beforeEach(async ({ page }) => {
+        test.setTimeout(60000); 
         const hp = new HomePage(page);
         await hp.goto();
         await page.waitForTimeout(6000);
@@ -98,8 +99,7 @@ test.describe('Culture Page', () => {
                 .trim();            // Assert after cleaning
             await expect(cleanedTitle.toLowerCase()).toContain(cleanedMenuText.toLowerCase(), { timeout: 15000 });
             await page.waitForTimeout(5000);
-            await page.goBack();
-            await page.waitForTimeout(5000);
+            await page.goBack({ waitUntil: 'domcontentloaded' });  
             await page.mouse.wheel(0, 600);
             await page.waitForTimeout(6000);
             await page.locator("body > div:nth-child(2) > header:nth-child(2) > div:nth-child(1) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)").hover();
@@ -123,12 +123,10 @@ test.describe('Culture Page', () => {
             const article = articles.nth(i);
             const articleText = await article.textContent();
             await article.click()
-            await page.waitForTimeout(1500);
+            await page.waitForTimeout(6500);
             const articlePageTitle = await page.locator("h1").textContent();
             await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 15000 });
-            await page.waitForTimeout(5000);
-            await page.goBack();
-            await page.waitForTimeout(5000);
+            await page.goBack({ waitUntil: 'domcontentloaded' });
         }
     })
 

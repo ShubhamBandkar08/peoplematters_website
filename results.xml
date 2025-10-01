@@ -1,9 +1,9 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="25.32430199999921">
-<testsuite name="Technology.spec.js" timestamp="2025-09-12T10:27:32.339Z" hostname="chromium" tests="1" failures="0" skipped="0" time="20.791" errors="0">
-<testcase name="Technology Page › TC_01 : Validate technology Page Loads Successfully" classname="Technology.spec.js" time="20.791">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="25.935250000000003">
+<testsuite name="Video.spec.js" timestamp="2025-10-01T06:28:49.538Z" hostname="chromium" tests="1" failures="0" skipped="0" time="21.21" errors="0">
+<testcase name="Video Page › TC_01 : Validate video Page Loads Successfully" classname="Video.spec.js" time="21.21">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\Technology-Technology-Page-35eb6-ogy-Page-Loads-Successfully-chromium\trace.zip]]
+[[ATTACHMENT|test-results\Video-Video-Page-TC-01-Val-1a269-deo-Page-Loads-Successfully-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>

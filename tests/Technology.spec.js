@@ -121,9 +121,9 @@ test.describe('Technology Page', () => {
             const article = articles.nth(i);
             const articleText = await article.textContent();
             await article.click()
-            await page.waitForTimeout(1500);
-            const articlePageTitle = await page.locator("h1").textContent();
-            await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 15000 });
+            await page.waitForTimeout(7000);
+            const articlePageTitle = await page.locator("h1").first().textContent();
+            await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 1500 });
             await page.waitForTimeout(5000);
             await page.goBack();
             await page.waitForTimeout(5000);

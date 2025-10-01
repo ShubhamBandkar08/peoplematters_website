@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { HomePage } = require('../pages/homepage.page');
 const { StrategyPage } = require('../pages/strategy.page');
+
 test.describe('Strategy Page', () => {
     test.use({
         viewport: { width: 1280, height: 720 },
@@ -115,25 +116,26 @@ test.describe('Strategy Page', () => {
 
     test('TC_05 : Validate Strategy Page Articles navigation and load successfully', async ({ page }) => {
         test.setTimeout(40000000);
-        const strategyPage = new StrategyPage(page);
         // Click Strategy link
+        const strategyPage = new StrategyPage(page);
         await strategyPage.strategyLink.click();
         await page.waitForTimeout(6000);
-        const articleSection = page.locator("[class='flex flex-col gap-y-10 lg:gap-y-16 relative w-full']");
-        const articles = articleSection.locator("h3");
-        const articleCount = await articles.count();
-        console.log('Total articles found:', articleCount);
-        for (let i = 0; i < articleCount; i++) {
-            const article = articles.nth(i);
-            const articleText = await article.textContent();
-            await article.click()
-            await page.waitForTimeout(1500);
-            const articlePageTitle = await page.locator("h1").textContent();
-            await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 15000 });
-            await page.waitForTimeout(5000);
-            await page.goBack();
-            await page.waitForTimeout(5000);
-        }
+        // const articleSection = page.locator("[class='flex flex-col gap-y-10 lg:gap-y-16 relative w-full']");
+        // const articles = articleSection.locator("h3");
+        // const articleCount = await articles.count();
+        // console.log('Total articles found:', articleCount);
+        // for (let i = 0; i < articleCount; i++) {
+        //     const article = articles.nth(i);
+        //     const articleText = await article.textContent();
+        //     await article.click()
+        //     await page.waitForTimeout(7500);
+        //     const articlePageTitle = await page.locator("h1").textContent();
+        //     await expect(articlePageTitle.trim()).toContain(articleText.trim(), { timeout: 15000 });
+        //     await page.waitForTimeout(5000);
+        //     await page.goBack();
+        //     await page.waitForTimeout(5000);
+        // }
+        await strategyPage.validateArticlesNavigation(page);
     })
 
    

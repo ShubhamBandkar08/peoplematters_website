@@ -103,20 +103,20 @@
   },
   "suites": [
     {
-      "title": "Technology.spec.js",
-      "file": "Technology.spec.js",
+      "title": "Video.spec.js",
+      "file": "Video.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Technology Page",
-          "file": "Technology.spec.js",
-          "line": 4,
+          "title": "Video Page",
+          "file": "Video.spec.js",
+          "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "TC_01 : Validate technology Page Loads Successfully",
+              "title": "TC_01 : Validate video Page Loads Successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -128,21 +128,21 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 39,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 20791,
+                      "duration": 21210,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-09-12T10:27:33.688Z",
+                      "startTime": "2025-10-01T06:28:51.108Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Technology-Technology-Page-35eb6-ogy-Page-Loads-Successfully-chromium\\trace.zip"
+                          "path": "D:\\Playwright Automation\\peoplematters_website\\test-results\\Video-Video-Page-TC-01-Val-1a269-deo-Page-Loads-Successfully-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -150,9 +150,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "da3a142fb2b13f7c6edd-7680dc0cf0e4bb7ec5d2",
-              "file": "Technology.spec.js",
-              "line": 17,
+              "id": "70519efbc5d200c9a4f4-f27f9683e49128e7198a",
+              "file": "Video.spec.js",
+              "line": 19,
               "column": 5
             }
           ]
@@ -162,8 +162,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-09-12T10:27:30.903Z",
-    "duration": 25324.30199999921,
+    "startTime": "2025-10-01T06:28:47.983Z",
+    "duration": 25935.250000000004,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
